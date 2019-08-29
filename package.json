@@ -1,0 +1,42 @@
+{
+  "name": "@smoozzy/api",
+  "description": "Axios facade for organizing work with your backends",
+  "version": "0.1.0",
+  "author": "Smoozzy Code <smoozzy.code@gmail.com>",
+  "license": {
+    "type": "MIT",
+    "url": "https://www.opensource.org/licenses/mit-license.php"
+  },
+  "bugs": {
+    "url": "https://github.com/smoozzy/api/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smoozzy/api.git"
+  },
+  "scripts": {
+  },
+  "devDependencies": {
+    "axios": "0.19.0",
+    "lint-staged": "8.2.0",
+    "yorkie": "2.0.0"
+  },
+  "peerDependencies": {
+    "axios": "~0.18.0",
+  },
+  "engines": {
+    "node": ">= 10.13.0",
+    "yarn": ">= 1.6.0"
+  },
+  "type": "module",
+  "main": "src/index.js",
+  "sideEffects": false,
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": [
+      "git add"
+    ]
+  }
+}
