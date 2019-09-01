@@ -3,10 +3,8 @@
   "description": "Axios facade for organizing work with your backends",
   "version": "0.1.0",
   "author": "Smoozzy Code <smoozzy.code@gmail.com>",
-  "license": {
-    "type": "MIT",
-    "url": "https://www.opensource.org/licenses/mit-license.php"
-  },
+  "homepage": "https://github.com/smoozzy/api#readme",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/smoozzy/api/issues"
   },
@@ -15,6 +13,7 @@
     "url": "git+https://github.com/smoozzy/api.git"
   },
   "scripts": {
+    "build": "rollup --config",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "test": "yarn test:unit",
@@ -23,15 +22,23 @@
   "devDependencies": {
     "@babel/core": "7.5.5",
     "@babel/preset-env": "7.5.5",
+    "@babel/plugin-transform-runtime": "7.5.5",
     "@types/jest": "24.0.18",
     "axios": "0.19.0",
     "axios-mock-adapter": "1.17.0",
     "babel-eslint": "10.0.3",
     "babel-jest": "24.9.0",
+    "core-js": "3.2.1",
     "eslint": "5.16.0",
     "jest": "24.9.0",
     "jest-watch-typeahead": "0.4.0",
     "lint-staged": "8.2.0",
+    "rollup": "1.20.3",
+    "rollup-plugin-babel": "4.3.3",
+    "rollup-plugin-commonjs": "10.1.0",
+    "rollup-plugin-node-resolve": "5.2.0",
+    "rollup-plugin-replace": "2.2.0",
+    "rollup-plugin-terser": "5.1.1",
     "yorkie": "2.0.0"
   },
   "peerDependencies": {
@@ -41,8 +48,13 @@
     "node": ">= 10.13.0",
     "yarn": ">= 1.6.0"
   },
-  "type": "module",
-  "main": "src/index.js",
+  "type": "commonjs",
+  "main": "dist/api.common.js",
+  "browser": "dist/api.umd.js",
+  "module": "src/index.js",
+  "unpkg": "dist/api.js",
+  "bundleDependencies": false,
+  "deprecated": false,
   "sideEffects": false,
   "gitHooks": {
     "pre-commit": "lint-staged"
